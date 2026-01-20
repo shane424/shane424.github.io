@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POD Design Studio - AI-Powered Print on Demand</title>
+    <title>PrintSync for Etsy - Automate Your Print-on-Demand Business</title>
     <style>
         * {
             margin: 0;
@@ -12,178 +12,447 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
         }
         
         .container {
-            max-width: 800px;
-            background: white;
-            padding: 60px 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #667eea;
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
-        .tagline {
-            font-size: 1.3em;
-            color: #666;
-            margin-bottom: 40px;
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
             gap: 30px;
-            margin: 40px 0;
-            text-align: left;
         }
         
-        .feature {
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
-        }
-        
-        .feature h3 {
-            color: #667eea;
-            margin-bottom: 10px;
-        }
-        
-        .cta {
-            margin-top: 40px;
-        }
-        
-        .button {
-            display: inline-block;
-            padding: 15px 40px;
-            background: #667eea;
+        nav a {
             color: white;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: transform 0.2s, box-shadow 0.2s;
-            margin: 10px;
+            transition: opacity 0.3s;
         }
         
-        .button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        nav a:hover {
+            opacity: 0.8;
         }
         
-        .footer {
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 2px solid #eee;
-            color: #999;
-        }
-        
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            margin: 40px 0;
-            flex-wrap: wrap;
-        }
-        
-        .stat {
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0;
             text-align: center;
-            padding: 20px;
         }
         
-        .stat-number {
-            font-size: 3em;
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
             font-weight: bold;
+            transition: transform 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #333;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
             color: #667eea;
         }
         
-        .stat-label {
-            color: #666;
-            margin-top: 5px;
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 0;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .step {
+            text-align: center;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            line-height: 60px;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .step h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        /* API Features */
+        .api-features {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .api-list {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .api-list ul {
+            list-style: none;
+        }
+        
+        .api-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .api-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        .api-list li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Pricing */
+        .pricing {
+            padding: 80px 0;
+        }
+        
+        .pricing-card {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        
+        .price {
+            font-size: 48px;
+            color: #667eea;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .footer-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        /* Mockup Section */
+        .mockup {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .mockup-image {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-top: 30px;
+            background: #f8f9fa;
+            padding: 40px;
+            text-align: center;
+            border: 2px dashed #667eea;
+        }
+        
+        .screenshot-placeholder {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 40px;
+            border-radius: 10px;
+            font-size: 24px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🎨 POD Design Studio</h1>
-        <p class="tagline">AI-Powered Print-on-Demand Design Automation</p>
-        
-        <p style="font-size: 1.1em; color: #666; margin-bottom: 30px;">
-            We create unique, high-quality designs for print-on-demand products using cutting-edge AI technology.
-            Our automated system generates professional designs optimized for Etsy, Redbubble, and other POD platforms.
-        </p>
-        
-        <div class="stats">
-            <div class="stat">
-                <div class="stat-number">1000+</div>
-                <div class="stat-label">Designs Generated</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">24/7</div>
-                <div class="stat-label">Automated Production</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">5+</div>
-                <div class="stat-label">Platform Integrations</div>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">PrintSync for Etsy</div>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="terms.html">Terms</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Automate Your Etsy Print-on-Demand Business</h1>
+            <p>Bulk upload products, sync inventory, and manage orders seamlessly with Etsy API integration</p>
+            <a href="#features" class="cta-button">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Powerful Features for Etsy Sellers</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Bulk Product Upload</h3>
+                    <p>Upload hundreds of print-on-demand products to your Etsy shop in minutes instead of hours. CSV import, automatic image processing, and template-based listing creation.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Inventory Sync</h3>
+                    <p>Keep your Etsy shop inventory synchronized with your print-on-demand provider. Automatic stock updates, variant management, and real-time availability tracking.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Shop Analytics</h3>
+                    <p>Access your Etsy shop data including sales statistics, listing performance, and customer insights. Make data-driven decisions to grow your business.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🏷️</div>
+                    <h3>Smart Listing Management</h3>
+                    <p>Batch edit titles, tags, descriptions, and prices across multiple listings. Update hundreds of products simultaneously with intelligent bulk operations.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Image Optimization</h3>
+                    <p>Automatically resize, optimize, and format product images according to Etsy's requirements. Watermark protection and batch image processing included.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📧</div>
+                    <h3>Order Notifications</h3>
+                    <p>Receive instant notifications for new orders and automatically forward them to your print-on-demand fulfillment partner. Never miss a sale.</p>
+                </div>
             </div>
         </div>
-        
-        <div class="features">
-            <div class="feature">
-                <h3>🤖 AI-Generated</h3>
-                <p>Unique designs created using advanced AI models, optimized for print-on-demand products.</p>
-            </div>
-            
-            <div class="feature">
-                <h3>📈 SEO Optimized</h3>
-                <p>Auto-generated titles, tags, and descriptions designed to rank well on marketplaces.</p>
-            </div>
-            
-            <div class="feature">
-                <h3>🚀 Multi-Platform</h3>
-                <p>Seamless integration with Etsy, Redbubble, Printful, and other major POD platforms.</p>
-            </div>
-            
-            <div class="feature">
-                <h3>⚡ Fast Production</h3>
-                <p>Generate dozens of professional designs in minutes with our automated system.</p>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How PrintSync Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Connect Your Shop</h3>
+                    <p>Securely connect your Etsy shop using OAuth 2.0 authentication. Your credentials are never stored.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Import Products</h3>
+                    <p>Upload your product catalog via CSV or connect your print-on-demand provider's API for automatic sync.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Customize & Publish</h3>
+                    <p>Review, edit, and optimize your listings before publishing them to your Etsy shop in bulk.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Manage & Grow</h3>
+                    <p>Monitor performance, update inventory, and scale your business with automated workflows.</p>
+                </div>
             </div>
         </div>
-        
-        <div class="cta">
-            <h2 style="margin-bottom: 20px;">Find Our Designs On</h2>
-            <a href="#" class="button">Etsy Store</a>
-            <a href="#" class="button">Redbubble</a>
+    </section>
+
+    <!-- Mockup Section -->
+    <section class="mockup">
+        <div class="container">
+            <h2 class="section-title">Interface Preview</h2>
+            <div class="mockup-image">
+                <div class="screenshot-placeholder">
+                    Dashboard Interface Screenshot<br>
+                    <small style="font-size: 16px; opacity: 0.8; margin-top: 20px; display: block;">
+                        Clean, intuitive interface for managing your Etsy products<br>
+                        Bulk upload, edit, and publish capabilities<br>
+                        Real-time sync with Etsy API
+                    </small>
+                </div>
+            </div>
         </div>
-        
-        <div class="footer">
-            <p><strong>About This Application</strong></p>
-            <p style="margin-top: 10px;">
-                This website represents our POD automation platform that integrates with Etsy's API
-                to streamline design listing and management. We use the Etsy API to automatically
-                create, update, and manage our product listings.
+    </section>
+
+    <!-- API Features -->
+    <section class="api-features">
+        <div class="container">
+            <h2 class="section-title">Etsy API Integration</h2>
+            <div class="api-list">
+                <p style="margin-bottom: 30px; text-align: center; color: #666;">
+                    PrintSync uses the official Etsy Open API v3 to provide the following capabilities:
+                </p>
+                <ul>
+                    <li><strong>Shop Management:</strong> Read shop information, update shop policies, manage shop sections</li>
+                    <li><strong>Listing Creation:</strong> Create new product listings with images, variations, and inventory</li>
+                    <li><strong>Listing Updates:</strong> Batch update titles, descriptions, tags, prices, and quantities</li>
+                    <li><strong>Image Upload:</strong> Upload and manage product images up to 10 per listing</li>
+                    <li><strong>Inventory Management:</strong> Track stock levels, manage product variations and SKUs</li>
+                    <li><strong>Order Retrieval:</strong> Access order information for fulfillment automation</li>
+                    <li><strong>Receipt Data:</strong> Retrieve transaction and receipt details for analytics</li>
+                    <li><strong>Shipping Profiles:</strong> Manage and apply shipping templates to listings</li>
+                    <li><strong>Taxonomy Access:</strong> Use Etsy's category taxonomy for proper product categorization</li>
+                    <li><strong>Shop Analytics:</strong> Access listing views, favorites, and performance metrics</li>
+                </ul>
+                <p style="margin-top: 30px; text-align: center; color: #666; font-size: 14px;">
+                    All API interactions comply with Etsy's <a href="https://www.etsy.com/legal/api" target="_blank">Terms of Use</a> and rate limiting policies.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Simple, Transparent Pricing</h2>
+            <div class="pricing-card">
+                <h3>Professional Plan</h3>
+                <div class="price">$29<span style="font-size: 20px; color: #666;">/mo</span></div>
+                <ul style="text-align: left; margin: 30px 0;">
+                    <li style="padding: 10px 0;">✓ Unlimited product uploads</li>
+                    <li style="padding: 10px 0;">✓ Automatic inventory sync</li>
+                    <li style="padding: 10px 0;">✓ Bulk editing tools</li>
+                    <li style="padding: 10px 0;">✓ Order notifications</li>
+                    <li style="padding: 10px 0;">✓ Analytics dashboard</li>
+                    <li style="padding: 10px 0;">✓ Priority support</li>
+                </ul>
+                <a href="#" class="cta-button">Coming Soon</a>
+                <p style="margin-top: 20px; font-size: 14px; color: #666;">Currently in development. API integration pending approval.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 PrintSync for Etsy. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="mailto:support@printsync-etsy.com">Contact Support</a>
+            </div>
+            <p style="margin-top: 20px; font-size: 14px; opacity: 0.7;">
+                PrintSync is an independent application and is not affiliated with or endorsed by Etsy, Inc.
             </p>
-            <p style="margin-top: 20px; font-size: 0.9em;">
-                <strong>Privacy Notice:</strong> We use Etsy's API in compliance with their Terms of Service.
-                No personal data is shared or stored beyond what's necessary for marketplace operations.
-            </p>
-            <p style="margin-top: 20px;">
-                © 2024 POD Design Studio. All rights reserved.
-            </p>
         </div>
-    </div>
+    </footer>
 </body>
 </html>
